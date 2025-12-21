@@ -6,8 +6,8 @@ Uses the correct OS-specific paths. Most developers get this wrong.
 
 ## Install
 
-```
-$ npm install env-paths
+```sh
+npm install env-paths
 ```
 
 ## Usage
@@ -99,15 +99,3 @@ Example locations (with the default `nodejs` [suffix](#suffix)):
 - macOS: `/var/folders/jf/f2twvvvs5jl_m49tf034ffpw0000gn/T/MyApp-nodejs`
 - Windows: `%LOCALAPPDATA%\Temp\MyApp-nodejs` (for example, `C:\Users\USERNAME\AppData\Local\Temp\MyApp-nodejs`)
 - Linux: `/tmp/USERNAME/MyApp-nodejs`
-
----
-
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-env-paths?utm_source=npm-env-paths&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
