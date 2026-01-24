@@ -21,8 +21,20 @@ test('custom suffix', t => {
 
 test('no suffix', t => {
 	const name = 'unicorn';
-	const paths = envPaths(name, {suffix: false});
+	const paths = envPaths(name, {suffix: ''});
 	t.true(paths.data.endsWith(name));
+});
+
+test('rejects invalid name', t => {
+	t.throws(() => envPaths('../../x'), {message: /Unsafe filename/});
+	t.throws(() => envPaths('../foo/bar'), {message: /Unsafe filename/});
+	t.throws(() => envPaths('foo/bar'), {message: /Unsafe filename/});
+	t.throws(() => envPaths(''), {message: /Unsafe filename/});
+});
+
+test('rejects invalid suffix', t => {
+	t.throws(() => envPaths('myapp', {suffix: '../x'}), {message: /Unsafe filename/});
+	t.throws(() => envPaths('myapp', {suffix: 'foo/bar'}), {message: /Unsafe filename/});
 });
 
 // Linux-specific tests

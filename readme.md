@@ -28,7 +28,7 @@ paths.config
 
 ### paths = envPaths(name, options?)
 
-Note: It only generates the path strings. It doesn't create the directories for you. You could use [`make-dir`](https://github.com/sindresorhus/make-dir) to create the directories.
+Note: It only generates the path strings. It doesn't create the directories for you. You can use [`fs.mkdir(…, {recursive: true})`](https://nodejs.org/api/fs.html#fspromisesmkdirpath-options) to create the directories.
 
 #### name
 
@@ -47,8 +47,7 @@ Default: `'nodejs'`
 
 **Don't use this option unless you really have to!**
 
-Suffix appended to the project name to avoid name conflicts with native
-apps. Pass an empty string to disable it.
+Suffix appended to the project name to avoid name conflicts with native apps. Pass an empty string to disable it.
 
 ### paths.data
 

@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import envPaths, {Paths} from './index.js';
+import envPaths, {type Paths} from './index.js';
 
 expectType<Paths>(envPaths('MyApp'));
 expectType<Paths>(envPaths('MyApp', {suffix: 'test'}));

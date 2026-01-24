@@ -1,4 +1,4 @@
-export interface Options {
+export type Options = {
 	/**
 	__Don't use this option unless you really have to!__
 
@@ -7,9 +7,9 @@ export interface Options {
 	@default 'nodejs'
 	*/
 	readonly suffix?: string;
-}
+};
 
-export interface Paths {
+export type Paths = {
 	/**
 	Directory for data files.
 
@@ -22,7 +22,7 @@ export interface Paths {
 	readonly data: string;
 
 	/**
-	Directory for data files.
+	Directory for config files.
 
 	Example locations (with the default `nodejs` suffix):
 
@@ -64,12 +64,12 @@ export interface Paths {
 	- Linux: `/tmp/USERNAME/MyApp-nodejs`
 	*/
 	readonly temp: string;
-}
+};
 
 /**
 Get paths for storing things like data, config, cache, etc.
 
-Note: It only generates the path strings. It doesn't create the directories for you. You could use [`make-dir`](https://github.com/sindresorhus/make-dir) to create the directories.
+Note: It only generates the path strings. It doesn't create the directories for you. You can use [`fs.mkdir(…, {recursive: true})`](https://nodejs.org/api/fs.html#fspromisesmkdirpath-options) to create the directories.
 
 @param name - The name of your project. Used to generate the paths.
 @returns The paths to use for your project on current OS.
